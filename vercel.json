@@ -1,8 +1,1 @@
-{
-  "crons": [
-    {
-      "path": "/server",
-      "schedule": "* * * * *"
-    }
-  ]
-}
+{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/server" }] }
