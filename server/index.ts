@@ -1,7 +1,8 @@
-import app from './app'
+import app from "./app";
 
 Bun.serve({
-    fetch: app.fetch
-  });
+  port: process.env.PORT || 3000,
+  fetch: app.fetch,
+});
 
-  console.log('Hello Bun Kopi!')
+console.log("Hello Bun Kopi!");
