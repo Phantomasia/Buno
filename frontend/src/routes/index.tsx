@@ -7,6 +7,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+export const Route = createFileRoute("/")({
+  component: Index,
+});
+
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 async function getTotalSpent() {
@@ -17,12 +21,9 @@ async function getTotalSpent() {
   const data = await res.json();
   return data;
 }
-export const Route = createFileRoute("/")({
-  component: Index,
-});
 
 function Index() {
-  const { isPending, error, data, isFetching } = useQuery({
+  const { isPending, error, data } = useQuery({
     queryKey: ["get-total-spent"],
     queryFn: getTotalSpent,
   });
